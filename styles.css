@@ -1,100 +1,162 @@
 /* =========================
-   ENHANCED TYPOGRAPHY
+   BASE
 ========================= */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-   font-family: "Bodoni Moda", serif;
-   background-color: var(--background);
-   color: var(--text);
-   line-height: 1.6;
+  font-family: "DM Sans", sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
 }
 
-h1 {
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-h2 {
-    color: var(--primary);
-    margin-bottom: 1.5rem;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* =========================
-   CTA BUTTON
+   HEADER
 ========================= */
 
+header {
+  background: #2d6a9f;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
 .cta-btn {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 12px 24px;
-
-    background: var(--secondary);
-    color: white;
-
-    text-decoration: none;
-    border-radius: 8px;
-
-    transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 12px 20px;
+  background: #f4a261;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
 .cta-btn:hover {
-    transform: translateY(-3px);
-    background: #e76f51;
+  transform: translateY(-3px);
 }
 
 /* =========================
-   TOOLTIPS
+   NAV
 ========================= */
 
-nav a {
-    position: relative;
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background: white;
+  padding: 1rem;
 }
 
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #333;
+  position: relative;
+}
+
+/* TOOLTIP */
 nav a::after {
-    content: attr(data-tooltip);
-
-    position: absolute;
-
-    bottom: -35px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    background: #333;
-    color: white;
-
-    padding: 5px 10px;
-    border-radius: 5px;
-
-    font-size: 12px;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: all 0.3s ease;
-
-    white-space: nowrap;
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
 }
 
 nav a:hover::after {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* =========================
-   PROJECT CARD ENHANCEMENTS
+   ABOUT
 ========================= */
 
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
 .project-card {
-    cursor: pointer;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
 }
 
 .project-card img {
-    transition: transform 0.4s ease;
+  width: 100%;
 }
 
-.project-card:hover img {
-    transform: scale(1.05);
+/* =========================
+   CONTACT
+========================= */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  background: #2d6a9f;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f4a261;
 }
 
 /* =========================
@@ -102,77 +164,49 @@ nav a:hover::after {
 ========================= */
 
 .modal {
-    display: none;
-
-    position: fixed;
-    z-index: 1000;
-
-    left: 0;
-    top: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.7);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
 }
 
 .modal-content {
-    background: white;
-
-    width: 90%;
-    max-width: 600px;
-
-    margin: 10% auto;
-
-    padding: 2rem;
-
-    border-radius: 10px;
-
-    animation: modalFade 0.3s ease;
+  background: white;
+  width: 80%;
+  max-width: 500px;
+  margin: 10% auto;
+  padding: 2rem;
 }
 
-.close-btn {
-    float: right;
-
-    font-size: 30px;
-
-    cursor: pointer;
-
-    color: #666;
-}
-
-.close-btn:hover {
-    color: black;
-}
-
-@keyframes modalFade {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.close {
+  float: right;
+  cursor: pointer;
 }
 
 /* =========================
-   CONTACT FORM ENHANCEMENT
+   RESPONSIVE
 ========================= */
 
-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--primary);
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    box-shadow: 0 0 8px rgba(45, 106, 159, 0.3);
+  .about-content {
+    flex-direction: column;
+  }
 }
 
-/* =========================
-   SECTION ANIMATION
-========================= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
 
-section {
-    animation: fadeIn 0.8s ease;
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }

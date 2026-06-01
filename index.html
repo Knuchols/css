@@ -1,173 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Alex Styles | Graphic Designer</title>
+  <title>Alex Styles | Graphic Designer</title>
 
-    <link rel="stylesheet" href="styles.css">
+  <!-- Font (single font: DM Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet"><body>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-    <header>
-        <div class="container">
-            <h1>Alex Styles</h1>
-            <p>Graphic Designer & Creative Professional</p>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1>Alex Styles</h1>
+      <p>Graphic Designer & Creative Professional</p>
 
-            <a href="#portfolio" class="cta-btn">
-                View My Work
-            </a>
-        </div>
-    </header>
+      <a href="#portfolio" class="cta-btn">View Work</a>
+    </div>
+  </header>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="#about" data-tooltip="Learn about Alex">
-                    About
-                </a>
-            </li>
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="#about" data-tooltip="Learn about Alex">About</a></li>
+      <li><a href="#portfolio" data-tooltip="View projects">Portfolio</a></li>
+      <li><a href="#contact" data-tooltip="Get in touch">Contact</a></li>
+    </ul>
+  </nav>
 
-            <li>
-                <a href="#portfolio" data-tooltip="Browse projects">
-                    Portfolio
-                </a>
-            </li>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about-content">
 
-            <li>
-                <a href="#contact" data-tooltip="Get in touch">
-                    Contact
-                </a>
-            </li>
-        </ul>
-    </nav>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I’m Alex, a graphic designer focused on branding, digital design,
+          and visual storytelling.
+        </p>
+      </div>
 
-    <main>
-
-        <section id="about">
-            <div class="container about-content">
-
-                <div class="about-text">
-                    <h2>About Me</h2>
-
-                    <p>
-                        I create engaging visual identities, branding systems,
-                        illustrations, and marketing materials that help
-                        businesses stand out and connect with their audience.
-                    </p>
-                </div>
-
-                <div class="about-image">
-                    <img src="images/profile.jpg"
-                         alt="Alex Styles">
-                </div>
-
-            </div>
-        </section>
-
-        <section id="portfolio">
-            <div class="container">
-
-                <h2>Portfolio</h2>
-
-                <div class="portfolio-grid">
-
-                    <div class="project-card"
-                         onclick="openModal(
-                         'Brand Identity',
-                         'A complete branding package including logo design, color systems, typography, and brand guidelines.')">
-
-                        <img src="https://via.placeholder.com/300x200"
-                             alt="Brand Identity">
-
-                        <h3>Brand Identity</h3>
-                    </div>
-
-                    <div class="project-card"
-                         onclick="openModal(
-                         'Marketing Campaign',
-                         'A digital and print campaign designed to increase customer engagement.')">
-
-                        <img src="https://via.placeholder.com/300x200"
-                             alt="Marketing Campaign">
-
-                        <h3>Marketing Campaign</h3>
-                    </div>
-
-                    <div class="project-card"
-                         onclick="openModal(
-                         'Illustration Series',
-                         'A collection of illustrations created for editorial and commercial use.')">
-
-                        <img src="https://via.placeholder.com/300x200"
-                             alt="Illustration Series">
-
-                        <h3>Illustration Series</h3>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section id="contact">
-
-            <div class="container">
-
-                <h2>Contact</h2>
-
-                <form>
-
-                    <input type="text"
-                           placeholder="Your Name"
-                           required>
-
-                    <input type="email"
-                           placeholder="Your Email"
-                           required>
-
-                    <textarea rows="5"
-                              placeholder="Your Message"
-                              required></textarea>
-
-                    <button type="submit">
-                        Send Message
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Alex Styles. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Modal -->
-
-    <div id="projectModal" class="modal">
-
-        <div class="modal-content">
-
-            <span class="close-btn"
-                  onclick="closeModal()">&times;</span>
-
-            <h2 id="modalTitle"></h2>
-
-            <p id="modalDescription"></p>
-
-        </div>
+      <div class="about-image">
+        <img src="images/profile.jpg" alt="Alex portrait">
+      </div>
 
     </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
 
+      <h2>Portfolio</h2>
+
+      <div class="portfolio-grid">
+
+        <div class="project-card"
+          onclick="openModal('Brand Identity','Full branding system design project.')">
+          <img src="https://via.placeholder.com/300x200" />
+          <h3>Brand Identity</h3>
+        </div>
+
+        <div class="project-card"
+          onclick="openModal('Marketing Campaign','Multi-platform campaign design.')">
+          <img src="https://via.placeholder.com/300x200" />
+          <h3>Marketing Campaign</h3>
+        </div>
+
+        <div class="project-card"
+          onclick="openModal('Illustration Series','Creative illustration collection.')">
+          <img src="https://via.placeholder.com/300x200" />
+          <h3>Illustration</h3>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+
+      <h2>Contact</h2>
+
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Alex Styles</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
